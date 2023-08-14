@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: lpxy
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: lpxy
+    app.kubernetes.io/part-of: byoc-app-rwrb
+  name: lpxy
+spec:
+  rules:
+  - host: lpxy-byoc-uqwc-tenant.apps.05cdfe0860871e830c81.hypershift.aws-2.ci.openshift.org
+    http:
+      paths:
+      - backend:
+          service:
+            name: lpxy
+            port:
+              number: 8081
+        path: /
+        pathType: ImplementationSpecific
+status:
+  loadBalancer: {}
